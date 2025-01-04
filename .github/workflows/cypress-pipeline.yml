@@ -3,14 +3,15 @@ name: Run Cypress Tests
 on:
   push:
     branches:
-      - master  # Substitua 'main' por 'master' aqui
+      - master
   pull_request:
     branches:
-      - master  # Também substitua 'main' por 'master' aqui
+      - master
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # Ou ubuntu-24.04, dependendo da sua preferência
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -29,15 +30,13 @@ jobs:
           npx cypress run
 
       - name: Upload Cypress Videos
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-videos
           path: cypress/videos
 
       - name: Upload Cypress Screenshots
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-
-
