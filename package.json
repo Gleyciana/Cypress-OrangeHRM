@@ -1,0 +1,14 @@
+{
+  "name": "cypress-orangehrm",
+  "version": "1.0.0",
+  "description": "Testes end to end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gleyciana Campelo",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.17.0"
+  }
+}
